@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('pages.users.title') }}
         </h2>
     </x-slot>
 
@@ -62,7 +62,7 @@
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                 @foreach($user->roles as $role)
-                                                    {{ $role->name }}
+                                                    {{ $role->name_local }}
                                                 @endforeach
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
