@@ -17,19 +17,19 @@
                                     <thead class="bg-gray-50">
                                     <tr>
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            @sortablelink('first_name', 'name')
+                                            @sortablelink('first_name', __('table.name'))
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Title
+                                            {{ __('table.title') }}
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Status
+                                            {{ __('table.status') }}
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Role
+                                            {{ __('table.role') }}
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            @sortablelink('created_at', 'Created Date')
+                                            @sortablelink('created_at', __('table.created_date'))
                                         </th>
                                         <th scope="col" class="relative px-6 py-3">
                                             <span class="sr-only">Actions</span>
