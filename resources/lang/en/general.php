@@ -9,6 +9,13 @@ return [
         'team_settings' => 'Team Settings',
         'create_new_team' => 'Create New Team',
         'switch_teams' => 'Switch Teams',
-        'manage_account' => 'Manage Account'
+        'manage_account' => 'Manage Account',
+    ],
+    'status' => [
+        'active' => 'Active',
+        'inactive' => 'Inactive',
+        'deleted' => 'Status',
+        'not_verified_by_admin' => 'Did not approved by admin',
+        'email_not_verified' => 'Email is not verified',
     ]
 ];

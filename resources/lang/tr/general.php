@@ -10,5 +10,12 @@ return [
         'create_new_team' => 'Yeni Ekip Yarat',
         'switch_teams' => 'Ekip Değiştir',
         'manage_account' => 'Hesabı Yönet'
+    ],
+    'status' => [
+        'active' => 'Aktif',
+        'inactive' => 'Pasif',
+        'deleted' => 'Silindi',
+        'not_verified_by_admin' => 'Yönetici tarafından onaylanmadı',
+        'email_not_verified' => 'Eposta Onaylanmadı',
     ]
 ];
