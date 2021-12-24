@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Kyslik\ColumnSortable\Sortable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
@@ -95,6 +96,7 @@ class User extends Authenticatable implements MustVerifyEmail, Commentator
     use HasRoles;
     use SoftDeletes;
     use HasActionInfo;
+    use Sortable;
 
     /**
      * The attributes that are mass assignable.
@@ -140,6 +142,10 @@ class User extends Authenticatable implements MustVerifyEmail, Commentator
         'profile_photo_url',
     ];
 
+    public $sortable = [
+        'first_name', 'created_at'
+    ];
+
     public function needsCommentApproval($model): bool
     {
         return false;
@@ -169,5 +175,10 @@ class User extends Authenticatable implements MustVerifyEmail, Commentator
     public function user_groups(): BelongsToMany
     {
         return $this->belongsToMany(UserGroup::class);
+    }
+
+    public function isVerifiedStudent(): bool
+    {
+        return $this->hasRole('student') && $this->hasVerifiedEmail();
     }
 }

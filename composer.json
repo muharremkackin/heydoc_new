@@ -9,6 +9,7 @@
         "beyondcode/laravel-comments": "dev-master",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "kyslik/column-sortable": "^6.4",
         "laravel/framework": "^8.75",
         "laravel/jetstream": "^2.5",
         "laravel/sanctum": "^2.11",

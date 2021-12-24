@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::with('roles')->paginate(10);
+        $request->all();
+        $users = User::sortable()->with('roles')->paginate(10);
         return view('users.index', ['users' => $users]);
     }
 }

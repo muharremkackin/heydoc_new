@@ -17,7 +17,7 @@
                                     <thead class="bg-gray-50">
                                     <tr>
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Name
+                                            @sortablelink('first_name', 'name')
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             Title
@@ -28,8 +28,11 @@
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             Role
                                         </th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            @sortablelink('created_at', 'Created Date')
+                                        </th>
                                         <th scope="col" class="relative px-6 py-3">
-                                            <span class="sr-only">Edit</span>
+                                            <span class="sr-only">Actions</span>
                                         </th>
                                     </tr>
                                     </thead>
@@ -64,6 +67,9 @@
                                                 @foreach($user->roles as $role)
                                                     {{ $role->name_local }}
                                                 @endforeach
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                {{ $user->created_at->diffForHumans() }}
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                 <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
