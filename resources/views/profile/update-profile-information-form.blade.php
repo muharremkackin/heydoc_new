@@ -52,11 +52,32 @@
             </div>
         @endif
 
-        <!-- Name -->
+        <!-- Title -->
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="name" value="{{ __('Name') }}" />
-            <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
-            <x-jet-input-error for="name" class="mt-2" />
+            <x-jet-label for="title" value="{{ __('general.columns.title') }}" />
+            <x-jet-input id="title" type="text" class="mt-1 block w-full" wire:model.defer="state.title" autocomplete="title" />
+            <x-jet-input-error for="title" class="mt-2" />
+        </div>
+
+        <!-- First Name -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="first_name" value="{{ __('general.columns.first_name') }}" />
+            <x-jet-input id="first_name" type="text" class="mt-1 block w-full" wire:model.defer="state.first_name" autocomplete="first_name" />
+            <x-jet-input-error for="first_name" class="mt-2" />
+        </div>
+
+        <!-- Middle Name -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="middle_name" value="{{ __('general.columns.middle_name') }}" />
+            <x-jet-input id="middle_name" type="text" class="mt-1 block w-full" wire:model.defer="state.middle_name" autocomplete="middle_name" />
+            <x-jet-input-error for="middle_name" class="mt-2" />
+        </div>
+
+        <!-- Last Name -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="last_name" value="{{ __('general.columns.last_name') }}" />
+            <x-jet-input id="last_name" type="text" class="mt-1 block w-full" wire:model.defer="state.last_name" autocomplete="last_name" />
+            <x-jet-input-error for="last_name" class="mt-2" />
         </div>
 
         <!-- Email -->

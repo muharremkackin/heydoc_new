@@ -112,5 +112,11 @@ return [
         "VISPROF" => "Visiting Professor",
         "VISRESS" => "Visiting Research Scientist",
         "VISSCHOL" => "Visiting Scholar",
+    ],
+    'columns' => [
+        'first_name' => 'First Name',
+        'middle_name' => 'Middle Name',
+        'last_name' => 'Last Name',
+        'title' => 'Title'
     ]
 ];
