@@ -15,7 +15,7 @@ return [
         'active' => 'Active',
         'inactive' => 'Inactive',
         'deleted' => 'Status',
-        'not_verified_by_admin' => 'Did not approved by admin',
+        'not_approved' => 'Did not approved by admin',
         'email_not_verified' => 'Email is not verified',
     ]
 ];

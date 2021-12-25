@@ -42,7 +42,7 @@
                                             <td class="px-6 py-4 whitespace-nowrap">
                                                 <div class="flex items-center">
                                                     <div class="flex-shrink-0 h-10 w-10">
-                                                        <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
+                                                        <img class="h-10 w-10 rounded-full" src="{{ $user->profile_photo_url }}" alt="{{ $user->full_name }}">
                                                     </div>
                                                     <div class="ml-4">
                                                         <div class="text-sm font-medium text-gray-900">
@@ -59,7 +59,8 @@
                                                 <div class="text-sm text-gray-500">Optimization</div>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap">
-                                                <x-pill-component color="green" content="{{ __('general.status.active') }}" />
+
+                                                <x-status-pill-component :type="$user->status" :content="$user->status_locale" />
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                 @foreach($user->roles as $role)

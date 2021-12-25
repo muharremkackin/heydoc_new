@@ -110,6 +110,8 @@ class User extends Authenticatable implements MustVerifyEmail, Commentator
         'last_name',
         'email',
         'password',
+        'approved_by',
+        'approved_at',
     ];
 
     /**
@@ -131,6 +133,7 @@ class User extends Authenticatable implements MustVerifyEmail, Commentator
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'approved_at' => 'datetime'
     ];
 
     /**
@@ -180,5 +183,38 @@ class User extends Authenticatable implements MustVerifyEmail, Commentator
     public function isVerifiedStudent(): bool
     {
         return $this->hasRole('student') && $this->hasVerifiedEmail();
+    }
+
+    public function isVerifiedLecturer(): bool
+    {
+        return $this->hasRole('lecturer') && $this->hasVerifiedEmail();
+    }
+
+    public function isVerifiedAdministrator(): bool
+    {
+        return $this->hasRole('administrator') && $this->hasVerifiedEmail();
+    }
+
+    public function getStatusAttribute(): int {
+        if ($this->hasVerifiedEmail() && $this->approved_at) {
+            return config('enumeration.status.active');
+        } else if (!$this->hasVerifiedEmail()) {
+            return config('enumeration.status.email_not_verified');
+        } else if ($this->deleted_at) {
+            return config('enumeration.status.deleted');
+        } else if (!$this->approved_at) {
+            return config('enumeration.status.not_approved');
+        } else {
+            return config('enumeration.status.inactive');
+        }
+    }
+
+    public function getStatusLocaleAttribute(): string {
+       return __('general.status.' . array_search($this->status, config('enumeration.status')));
+    }
+
+    protected function defaultProfilePhotoUrl(): string
+    {
+        return 'https://ui-avatars.com/api/?name='.urlencode($this->full_name).'&color=7F9CF5&background=EBF4FF';
     }
 }

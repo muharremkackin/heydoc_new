@@ -15,7 +15,7 @@ return [
         'active' => 'Aktif',
         'inactive' => 'Pasif',
         'deleted' => 'Silindi',
-        'not_verified_by_admin' => 'Yönetici tarafından onaylanmadı',
+        'not_approved' => 'Yönetici tarafından onaylanmadı',
         'email_not_verified' => 'Eposta Onaylanmadı',
     ]
 ];

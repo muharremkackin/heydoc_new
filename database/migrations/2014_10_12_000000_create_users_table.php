@@ -25,9 +25,11 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->foreignId('approved_by')->nullable()->references('id')->on('users');
             $table->foreignId('created_by')->nullable()->references('id')->on('users');
             $table->foreignId('updated_by')->nullable()->references('id')->on('users');
             $table->foreignId('deleted_by')->nullable()->references('id')->on('users');
+            $table->timestamp('approved_at')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
