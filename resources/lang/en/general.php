@@ -117,6 +117,20 @@ return [
         'first_name' => 'First Name',
         'middle_name' => 'Middle Name',
         'last_name' => 'Last Name',
-        'title' => 'Title'
+        'title' => 'Title',
+        'password' => 'Password',
+        'current_password' => 'Current Password',
+        'new_password' => 'New Password',
+        'confirm_password' => 'Confirm Password',
+    ],
+    'messages' => [
+        'done' => 'Done.'
+    ],
+    'modals' => [
+        'enter_password' => 'Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.'
+    ],
+    'buttons' => [
+        'cancel' => 'Cancel',
+        'enable' => 'Enable',
     ]
 ];
