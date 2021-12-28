@@ -55,6 +55,11 @@ class Document extends Model
     use SoftDeletes;
     use HasActionInfo;
 
+    protected $fillable = [
+        'name', 'description'
+    ];
+
+
     public function files(): HasMany
     {
         return $this->hasMany(File::class);

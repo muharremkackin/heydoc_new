@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -165,9 +166,9 @@ class User extends Authenticatable implements MustVerifyEmail, Commentator
         }
     }
 
-    public function documents(): HasMany
+    public function documents(): MorphMany
     {
-        return $this->hasMany(Document::class);
+        return $this->morphMany(Document::class, 'documentable');
     }
 
     public function files(): HasMany
@@ -175,10 +176,6 @@ class User extends Authenticatable implements MustVerifyEmail, Commentator
         return $this->hasMany(File::class);
     }
 
-    public function user_groups(): BelongsToMany
-    {
-        return $this->belongsToMany(UserGroup::class);
-    }
 
     public function isVerifiedStudent(): bool
     {
@@ -216,5 +213,10 @@ class User extends Authenticatable implements MustVerifyEmail, Commentator
     protected function defaultProfilePhotoUrl(): string
     {
         return 'https://ui-avatars.com/api/?name='.urlencode($this->full_name).'&color=7F9CF5&background=EBF4FF';
+    }
+
+    public function groups(): BelongsToMany
+    {
+        return $this->belongsToMany(Group::class, 'user_group', 'user_id', 'group_id');
     }
 }

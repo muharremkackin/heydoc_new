@@ -29,5 +29,8 @@ return [
         'delete_account' => 'Hesabı Sil',
         'delete_account_description' => 'Hesabınızı kalıcı olarak silin.',
         'delete_account_definition' => 'Hesabınız silindiğinde, tüm kaynakları ve verileri kalıcı olarak silinecektir. Hesabınızı silmeden önce, lütfen saklamak istediğiniz tüm verileri veya bilgileri indirin.',
-    ]
+    ],
+    'groups' => [
+        'title' => 'Gruplar'
+    ],
 ];

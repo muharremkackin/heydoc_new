@@ -6,5 +6,6 @@ return [
     'status' => 'Status',
     'roles' => 'Roles',
     'role' => 'Role',
-    'created_date' => 'Created Date'
+    'created_date' => 'Created Date',
+    'owner' => 'Owner'
 ];

@@ -6,5 +6,6 @@ return [
     'status' => 'Statü',
     'roles' => 'Roller',
     'role' => 'Rol',
-    'created_date' => 'Oluşturulma Tarihi'
+    'created_date' => 'Oluşturulma Tarihi',
+    'owner' => 'Sahibi'
 ];
