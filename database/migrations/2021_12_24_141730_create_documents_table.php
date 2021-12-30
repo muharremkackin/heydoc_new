@@ -15,7 +15,10 @@ class CreateDocumentsTable extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id')->references('id')->on('categories');
             $table->morphs('documentable');
+            $table->uuid('unique_id');
+            $table->string('slug');
             $table->string('name');
             $table->string('description', 5000);
             $table->foreignId('created_by')->nullable()->references('id')->on('users');

@@ -17,7 +17,7 @@ class Group extends Model
     use HasActionInfo;
 
     protected $fillable = [
-        'name', 'description'
+        'unique_id', 'name', 'description', 'slug'
     ];
 
     public function users(): BelongsToMany

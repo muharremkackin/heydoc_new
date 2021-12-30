@@ -15,6 +15,8 @@ class CreateGroupsTable extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
+            $table->uuid('unique_id');
+            $table->string('slug');
             $table->string('name');
             $table->string('description', 5000);
             $table->foreignId('created_by')->nullable()->references('id')->on('users');

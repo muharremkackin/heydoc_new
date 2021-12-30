@@ -47,6 +47,10 @@ class Category extends Model
     use SoftDeletes;
     use HasActionInfo;
 
+    protected $fillable = [
+        'unique_id', 'name', 'slug', 'description'
+    ];
+
     public function documents(): HasMany {
         return $this->hasMany(Category::class);
     }

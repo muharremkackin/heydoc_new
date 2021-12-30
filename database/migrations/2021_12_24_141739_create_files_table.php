@@ -15,10 +15,11 @@ class CreateFilesTable extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->references('id')->on('categories');
+            $table->foreignId('document_id')->references('id')->on('documents');
             $table->string('name');
             $table->string('slug');
             $table->string('extension');
+            $table->string('mime_type');
             $table->string('size');
             $table->foreignId('created_by')->nullable()->references('id')->on('users');
             $table->foreignId('updated_by')->nullable()->references('id')->on('users');

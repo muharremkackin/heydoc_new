@@ -105,6 +105,7 @@ class User extends Authenticatable implements MustVerifyEmail, Commentator
      * @var string[]
      */
     protected $fillable = [
+        'unique_id',
         'title',
         'first_name',
         'middle_name',

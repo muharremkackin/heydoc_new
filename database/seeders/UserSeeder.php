@@ -20,21 +20,24 @@ class UserSeeder extends Seeder
                 'first_name' => 'Murphy',
                 'middle_name' => null,
                 'last_name' => 'Murdock',
-                'email' => 'lw.murphy.murdock@app.test'
+                'email' => 'lw.murphy.murdock@app.test',
+                'unique_id' => \Str::orderedUuid()
             ],
             'lecturer' => [
                 'title' => 'Dr.',
                 'first_name' => 'Emmet',
                 'middle_name' => null,
                 'last_name' => 'Brown',
-                'email' => 'dr.emmet.brown@app.test'
+                'email' => 'dr.emmet.brown@app.test',
+                'unique_id' => \Str::orderedUuid()
             ],
             'student' => [
                 'title' => 'S.',
                 'first_name' => 'Marty',
                 'middle_name' => null,
                 'last_name' => 'McFly',
-                'email' => 'st.mary.mcfly@app.test'
+                'email' => 'st.mary.mcfly@app.test',
+                'unique_id' => \Str::orderedUuid()
             ],
         ];
 
